@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+section {
+  outline: 2px aqua dashed;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+}
+
+:root {
+  --square-size: 20px;
+}
+
+.row01,
+.row02,
+.row03,
+.row04,
+.row05,
+.row06,
+.row07,
+.row08,
+.row09 {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+}
+
+.square {
+  width: var(--square-size);
+  height: var(--square-size);
+  background-color: beige;
+  margin: 1px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rd div {
+  background-color: red;
+}
+
+.blck div {
+  background-color: #000;
+}
+
+.stitch1,
+.stitch2 {
+  width: calc(var(--square-size) * 2);
+  height: 7px;
+  position: relative;
+  /* top: calc(var(--square-size) / 2); */
+  left: calc(-1 * (var(--square-size) / 6)); /* -5px */
+  opacity: 80%;
+}
+
+.stitch1 {
+  /* transform-origin: calc(var(--square-size) / 2) calc(var(--square-size) / 2); */
+  transform: rotate(45deg);
+  /* left: calc(-1 * (var(--square-size) / 6)); */
+}
+
+.stitch2 {
+  /* transform-origin: center; */
+  transform: rotateZ(-45deg);
+}
