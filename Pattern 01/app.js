@@ -142,3 +142,27 @@ setTimeout(() => {
 setTimeout(() => {
   colorStitches(step8, blck_08, setStyle1);
 }, 2850);
+
+// Setting up the dark/light theme:
+
+const wrapper = document.getElementsByTagName("body");
+const square = document.getElementsByClassName("square");
+const stitch = document.getElementsByClassName("blck");
+
+wrapper[0].addEventListener("click", darkLightMode);
+
+function darkLightMode(e) {
+  if (e.type == "click") {
+    // Toggle the <body>:
+    wrapper[0].classList.toggle("darkWrapper");
+    // ...and squares:
+    for (let i = 0; i < square.length; i++) {
+      square[i].classList.toggle("darkSquare");
+    }
+    // ...and stitches:
+    for (let k = 0; k < stitch.length; k++) {
+      stitch[k].children[1].classList.toggle("lightStitch");
+      stitch[k].children[0].classList.toggle("lightStitch");
+    }
+  }
+}

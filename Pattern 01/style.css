@@ -115,19 +115,19 @@ section {
     opacity: 0%;
   }
   20% {
-    opacity: 100%;
+    opacity: 80%;
   }
   40% {
     opacity: 0%;
   }
   60% {
-    opacity: 100%;
+    opacity: 80%;
   }
   80% {
     opacity: 0%;
   }
   100% {
-    opacity: 100%;
+    opacity: 80%;
   }
 }
 
@@ -142,4 +142,21 @@ section {
     height: 3px;
     left: -1.5px;
   }
+}
+
+/* DARK MODE: */
+
+/* Global wtrapper is a <body> tag: */
+.darkWrapper {
+  background-color: #000;
+}
+
+/* Darkish squares: */
+.darkSquare {
+  background-color: #080808;
+}
+
+/* Let's turn black stitches into whites :) */
+.lightStitch {
+  background-color: #fff !important;
 }
