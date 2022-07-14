@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+section {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  outline: green 2px dashed;
+}
+
+:root {
+  --square-size: 20px;
+  --square-size-phone: 10px;
+}
+
+/* Canvas: */
+
+.row01,
+.row02,
+.row03,
+.row04,
+.row05,
+.row06,
+.row07,
+.row08,
+.row09,
+.row10,
+.row11,
+.row12,
+.row13,
+.row14,
+.row15,
+.row16,
+.row17 {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+}
+
+/* Canvas squares */
+
+.square {
+  width: var(--square-size);
+  height: var(--square-size);
+  background-color: beige;
+  margin: 1px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stitches: */
+
+.rd div {
+  background-color: red;
+}
+
+.blck div {
+  background-color: #000;
+}
+
+.stitch1,
+.stitch2 {
+  width: calc(var(--square-size) * 2);
+  height: 7px;
+  position: relative;
+  left: calc(-1 * (var(--square-size) / 6)); /* -5px */
+  opacity: 100%;
+}
+
+.stitch1 {
+  transform: rotate(45deg);
+}
+
+.stitch2 {
+  transform: rotateZ(-45deg);
+}
