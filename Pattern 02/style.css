@@ -40,7 +40,15 @@ section {
 .row14,
 .row15,
 .row16,
-.row17 {
+.row17,
+.row18,
+.row19,
+.row20,
+.row21,
+.row22,
+.row23,
+.row24,
+.row25 {
   display: flex;
   width: fit-content;
   height: fit-content;
