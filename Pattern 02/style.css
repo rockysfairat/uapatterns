@@ -15,6 +15,11 @@ section {
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
   outline: green 2px dashed;
+  animation-name: rotateWrapper;
+  animation-duration: 3000ms;
+  animation-delay: 2500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 :root {
@@ -59,7 +64,7 @@ section {
 .square {
   width: var(--square-size);
   height: var(--square-size);
-  background-color: beige;
+  background-color: inherit;
   margin: 1px;
   overflow: hidden;
   display: flex;
@@ -94,3 +99,56 @@ section {
 .stitch2 {
   transform: rotateZ(-45deg);
 }
+
+/* Animations: */
+
+/* For stitches: */
+
+@keyframes stitchesAppearInOneStep {
+  form {
+    opacity: 0%;
+  }
+  to {
+    opacity: 80%;
+    background-color: aqua;
+  }
+}
+
+@keyframes stitchesBlink {
+  0% {
+    opacity: 0%;
+  }
+  20% {
+    opacity: 80%;
+  }
+  40% {
+    opacity: 0%;
+  }
+  60% {
+    opacity: 80%;
+  }
+  80% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 80%;
+    background-color: green;
+  }
+}
+
+/* For the wrapper: */
+
+/* @keyframes rotateWrapper {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  30% {
+    transform: rotateZ(90deg);
+  }
+  70% {
+    transform: rotateZ(90deg);
+  }
+  100% {
+    transform: rotateZ(180deg);
+  }
+} */
