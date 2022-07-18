@@ -1,9 +1,6 @@
 const blackStitches = document.getElementsByClassName("blck");
 const redStitches = document.getElementsByClassName("rd");
 
-console.log(blackStitches);
-console.log(redStitches);
-
 // Saving the animation names into array:
 
 const aniNames = ["stitchesAppearInOneStep", "stitchesBlink"];
@@ -57,6 +54,14 @@ const black_step20 = [
   6, 10, 11, 12, 16, 17, 18, 19, 33, 38, 41, 42, 45, 46, 49, 50, 57, 58, 61, 62,
   65, 66, 69, 74, 88, 89, 90, 91, 95, 96, 97, 101,
 ];
+const red_step21 = [15, 18, 21, 28, 91, 98, 101, 104];
+const red_step22 = [16, 17, 31, 40, 79, 88, 102, 103];
+const red_step23 = [24, 25, 43, 47, 72, 76, 94, 95];
+const red_step24 = [34, 37, 44, 46, 73, 75, 82, 85];
+const red_step25 = [35, 36, 50, 54, 65, 69, 83, 84];
+const red_step26 = [45, 58, 61, 74];
+const red_step27 = [51, 53, 66, 68];
+const red_step28 = [52, 59, 60, 67];
 
 setTimeout(() => {
   applyAnimation(blackStitches, black_step1, aniNames[0]);
@@ -143,3 +148,51 @@ setTimeout(() => {
 setTimeout(() => {
   applyAnimation(blackStitches, black_step20, aniNames[1]);
 }, 7100);
+
+setTimeout(() => {
+  applyAnimation(redStitches, red_step21, aniNames[0]);
+}, 7500);
+
+setTimeout(() => {
+  applyAnimation(redStitches, red_step22, aniNames[0]);
+}, 7600);
+
+setTimeout(() => {
+  applyAnimation(redStitches, red_step23, aniNames[0]);
+}, 7700);
+
+setTimeout(() => {
+  applyAnimation(redStitches, red_step24, aniNames[0]);
+}, 7800);
+
+setTimeout(() => {
+  applyAnimation(redStitches, red_step25, aniNames[0]);
+}, 7900);
+
+setTimeout(() => {
+  applyAnimation(redStitches, red_step26, aniNames[1]);
+}, 7400);
+
+setTimeout(() => {
+  applyAnimation(redStitches, red_step27, aniNames[0]);
+}, 8300);
+
+setTimeout(() => {
+  applyAnimation(redStitches, red_step28, aniNames[0]);
+}, 8400);
+
+// Mmmmmmm, something is missing...
+// Let's give the wrapper a nice rotation animation :)
+
+const wrapper = document.getElementsByTagName("section");
+
+console.log(wrapper);
+
+function rotateWrapper(element) {
+  element.style =
+    " animation-name: rotateWrapper; animation-duration: 3000ms; animation-iteration-count: 1;animation-fill-mode: forwards;";
+}
+
+setTimeout(() => {
+  rotateWrapper(wrapper[0]);
+}, 2500);

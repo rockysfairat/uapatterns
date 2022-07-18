@@ -7,6 +7,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #fff;
 }
 
 section {
@@ -14,12 +15,6 @@ section {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
-  outline: green 2px dashed;
-  animation-name: rotateWrapper;
-  animation-duration: 3000ms;
-  animation-delay: 2500ms;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }
 
 :root {
@@ -89,7 +84,7 @@ section {
   height: 7px;
   position: relative;
   left: calc(-1 * (var(--square-size) / 6)); /* -5px */
-  opacity: 100%;
+  opacity: 0%;
 }
 
 .stitch1 {
@@ -110,7 +105,6 @@ section {
   }
   to {
     opacity: 80%;
-    background-color: aqua;
   }
 }
 
@@ -132,13 +126,12 @@ section {
   }
   100% {
     opacity: 80%;
-    background-color: green;
   }
 }
 
 /* For the wrapper: */
 
-/* @keyframes rotateWrapper {
+@keyframes rotateWrapper {
   0% {
     transform: rotateZ(0deg);
   }
@@ -151,4 +144,19 @@ section {
   100% {
     transform: rotateZ(180deg);
   }
-} */
+}
+
+/* Mobile view: */
+
+@media screen and (max-width: 600px) {
+  .square {
+    width: var(--square-size-phone);
+    height: var(--square-size-phone);
+  }
+
+  .stitch1,
+  .stitch2 {
+    height: 3px;
+    left: -1.5px;
+  }
+}
