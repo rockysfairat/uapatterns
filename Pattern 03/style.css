@@ -11,7 +11,7 @@ body {
 }
 
 section {
-  left: -400px; /* remove this */
+  left: -1000px; /* remove this */
   position: absolute; /* remove this */
   width: fit-content;
   display: grid;
@@ -96,7 +96,27 @@ section {
 .row67,
 .row68,
 .row69,
-.row70 {
+.row70,
+.row71,
+.row72,
+.row73,
+.row74,
+.row75,
+.row76,
+.row77,
+.row78,
+.row79,
+.row80,
+.row81,
+.row82,
+.row83,
+.row84,
+.row85,
+.row86,
+.row87,
+.row88,
+.row89,
+.row90 {
   display: flex;
   width: fit-content;
   height: fit-content;
