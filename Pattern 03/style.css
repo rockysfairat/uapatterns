@@ -8,11 +8,10 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #fff;
+  color: #fff;
 }
 
 section {
-  left: -1000px; /* remove this */
-  position: absolute; /* remove this */
   width: fit-content;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -21,7 +20,7 @@ section {
 }
 
 :root {
-  --square-size: 20px;
+  --square-size: 15px;
   --square-size-phone: 10px;
 }
 
@@ -116,7 +115,26 @@ section {
 .row87,
 .row88,
 .row89,
-.row90 {
+.row90,
+.row91,
+.row92,
+.row93,
+.row94,
+.row95,
+.row96,
+.row97,
+.row98,
+.row99,
+.row100,
+.row101,
+.row102,
+.row103,
+.row104,
+.row105,
+.row106,
+.row107,
+.row108,
+.row109 {
   display: flex;
   width: fit-content;
   height: fit-content;
@@ -150,9 +168,9 @@ section {
 .stitch1,
 .stitch2 {
   width: calc(var(--square-size) * 2);
-  height: 7px;
+  height: calc(var(--square-size) / 3);
   position: relative;
-  left: calc(-1 * (var(--square-size) / 6)); /* -5px */
+  left: -3px;
   opacity: 100%;
 }
 
@@ -162,4 +180,15 @@ section {
 
 .stitch2 {
   transform: rotateZ(-45deg);
+}
+
+/* Dark theme */
+
+.darkTheme {
+  background-color: #000;
+  color: #000;
+}
+
+.darkTheme .blck div {
+  background-color: #fff;
 }
