@@ -46,108 +46,12 @@ function colorStitches(array, element, styleFunction) {
   }
 }
 
-// First part:
-
-colorStitches(step1, rd_01, setStyle1);
-
-setTimeout(() => {
-  colorStitches(step2, rd_01, setStyle1);
-}, 150);
-
-setTimeout(() => {
-  colorStitches(step3, rd_01, setStyle1);
-}, 300);
-
-setTimeout(() => {
-  colorStitches(step4, rd_01, setStyle1);
-}, 450);
-
-// Second part:
-
-setTimeout(() => {
-  colorStitches(step1, rd_02, setStyle1);
-}, 450);
-
-setTimeout(() => {
-  colorStitches(step2, rd_02, setStyle1);
-}, 600);
-
-setTimeout(() => {
-  colorStitches(step3, rd_02, setStyle1);
-}, 750);
-
-setTimeout(() => {
-  colorStitches(step4, rd_02, setStyle1);
-}, 900);
-
-// Third part:
-
-setTimeout(() => {
-  colorStitches(step1, rd_03, setStyle1);
-}, 900);
-
-setTimeout(() => {
-  colorStitches(step2, rd_03, setStyle1);
-}, 1050);
-
-setTimeout(() => {
-  colorStitches(step3, rd_03, setStyle1);
-}, 1200);
-
-setTimeout(() => {
-  colorStitches(step4, rd_03, setStyle1);
-}, 1350);
-
-// Fourth part:
-
-setTimeout(() => {
-  colorStitches(step1, rd_04, setStyle1);
-}, 1350);
-
-setTimeout(() => {
-  colorStitches(step2, rd_04, setStyle1);
-}, 1500);
-
-setTimeout(() => {
-  colorStitches(step3, rd_04, setStyle1);
-}, 1650);
-
-setTimeout(() => {
-  colorStitches(step4, rd_04, setStyle1);
-}, 1800);
-
-// Fifth part:
-
-setTimeout(() => {
-  colorStitches(step5, rd_05, setStyle1);
-}, 1000);
-
-// Sixth part:
-
-setTimeout(() => {
-  colorStitches(step6, blck_06, setStyle2);
-}, 2200);
-
-// Seveth part:
-
-// Part Five and part Seven share the same number of elements,
-// so we're gonna use the step5 array:
-
-setTimeout(() => {
-  colorStitches(step5, blck_07, setStyle2);
-}, 2600);
-
-// Eighth part, the last:
-
-setTimeout(() => {
-  colorStitches(step8, blck_08, setStyle1);
-}, 2850);
-
 // Setting up the dark/light theme:
 
 const wrapper = document.getElementsByTagName("body");
 const square = document.getElementsByClassName("square");
-const stitch = document.getElementsByClassName("blck");
+const stitchBlack = document.getElementsByClassName("blck");
+const stitchRed = document.getElementsByClassName("rd");
 
 wrapper[0].addEventListener("click", darkLightMode);
 
@@ -160,9 +64,132 @@ function darkLightMode(e) {
       square[i].classList.toggle("darkSquare");
     }
     // ...and stitches:
-    for (let k = 0; k < stitch.length; k++) {
-      stitch[k].children[1].classList.toggle("lightStitch");
-      stitch[k].children[0].classList.toggle("lightStitch");
+    for (let k = 0; k < stitchBlack.length; k++) {
+      stitchBlack[k].children[0].classList.toggle("lightStitch");
+      stitchBlack[k].children[1].classList.toggle("lightStitch");
     }
   }
 }
+
+// Clean up function for stitches:
+
+function clearStitches(element) {
+  for (let i = 0; i < element.length; i++) {
+    element[i].children[0].style = "opacity: 0;";
+  }
+  for (let i = 0; i < element.length; i++) {
+    element[i].children[1].style = "opacity: 0;";
+  }
+}
+
+function animate() {
+  // First part:
+
+  colorStitches(step1, rd_01, setStyle1);
+
+  setTimeout(() => {
+    colorStitches(step2, rd_01, setStyle1);
+  }, 150);
+
+  setTimeout(() => {
+    colorStitches(step3, rd_01, setStyle1);
+  }, 300);
+
+  setTimeout(() => {
+    colorStitches(step4, rd_01, setStyle1);
+  }, 450);
+
+  // Second part:
+
+  setTimeout(() => {
+    colorStitches(step1, rd_02, setStyle1);
+  }, 450);
+
+  setTimeout(() => {
+    colorStitches(step2, rd_02, setStyle1);
+  }, 600);
+
+  setTimeout(() => {
+    colorStitches(step3, rd_02, setStyle1);
+  }, 750);
+
+  setTimeout(() => {
+    colorStitches(step4, rd_02, setStyle1);
+  }, 900);
+
+  // Third part:
+
+  setTimeout(() => {
+    colorStitches(step1, rd_03, setStyle1);
+  }, 900);
+
+  setTimeout(() => {
+    colorStitches(step2, rd_03, setStyle1);
+  }, 1050);
+
+  setTimeout(() => {
+    colorStitches(step3, rd_03, setStyle1);
+  }, 1200);
+
+  setTimeout(() => {
+    colorStitches(step4, rd_03, setStyle1);
+  }, 1350);
+
+  // Fourth part:
+
+  setTimeout(() => {
+    colorStitches(step1, rd_04, setStyle1);
+  }, 1350);
+
+  setTimeout(() => {
+    colorStitches(step2, rd_04, setStyle1);
+  }, 1500);
+
+  setTimeout(() => {
+    colorStitches(step3, rd_04, setStyle1);
+  }, 1650);
+
+  setTimeout(() => {
+    colorStitches(step4, rd_04, setStyle1);
+  }, 1800);
+
+  // Fifth part:
+
+  setTimeout(() => {
+    colorStitches(step5, rd_05, setStyle1);
+  }, 1000);
+
+  // Sixth part:
+
+  setTimeout(() => {
+    colorStitches(step6, blck_06, setStyle2);
+  }, 2200);
+
+  // Seveth part:
+
+  // Part Five and part Seven share the same number of elements,
+  // so we're gonna use the step5 array:
+
+  setTimeout(() => {
+    colorStitches(step5, blck_07, setStyle2);
+  }, 2600);
+
+  // Eighth part, the last:
+
+  setTimeout(() => {
+    colorStitches(step8, blck_08, setStyle1);
+  }, 2850);
+
+  // Clear the stitches:
+
+  setTimeout(() => {
+    clearStitches(stitchBlack);
+    clearStitches(stitchRed);
+  }, 5000);
+}
+
+animate();
+
+setInterval(() => {
+  animate();
+}, 5100);

@@ -8,6 +8,7 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #fff;
+  overflow: hidden;
 }
 
 section {
@@ -15,6 +16,13 @@ section {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
+}
+
+h3 {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 10;
 }
 
 :root {
@@ -159,4 +167,22 @@ section {
     height: 3px;
     left: -1.5px;
   }
+}
+
+/* DARK MODE: */
+
+/* Global wrapper is a <body> tag: */
+.darkWrapper {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Darkish squares: */
+.darkSquare {
+  background-color: #000;
+}
+
+/* Let's turn black stitches into whites :) */
+.lightStitch {
+  background-color: #fff !important;
 }
