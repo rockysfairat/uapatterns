@@ -20,6 +20,45 @@ function applyAnimation(element, array, animationName) {
   }
 }
 
+// Setting up the dark/light theme:
+
+const globalWrapper = document.getElementsByTagName("body");
+const text = document.getElementsByTagName("h3");
+const square = document.getElementsByClassName("square");
+const stitchBlack = document.getElementsByClassName("blck");
+const stitchRed = document.getElementsByClassName("rd");
+
+globalWrapper[0].addEventListener("click", darkLightMode);
+
+function darkLightMode(e) {
+  if (e.type == "click") {
+    // Toggle the <body>:
+    globalWrapper[0].classList.toggle("darkWrapper");
+    // ...and <h3> tag:
+    text[0].classList.toggle("darkWrapper");
+    // ...and squares:
+    for (let i = 0; i < square.length; i++) {
+      square[i].classList.toggle("darkSquare");
+    }
+    // ...and stitches:
+    for (let k = 0; k < stitchBlack.length; k++) {
+      stitchBlack[k].children[0].classList.toggle("lightStitch");
+      stitchBlack[k].children[1].classList.toggle("lightStitch");
+    }
+  }
+}
+
+// Clean up function for stitches:
+
+function clearStitches(element) {
+  for (let i = 0; i < element.length; i++) {
+    element[i].children[0].style = "opacity: 0;";
+  }
+  for (let i = 0; i < element.length; i++) {
+    element[i].children[1].style = "opacity: 0;";
+  }
+}
+
 // Dividing animation into different steps.
 // Gonna store positions of elements in need into arrays:
 
@@ -63,136 +102,158 @@ const red_step26 = [45, 58, 61, 74];
 const red_step27 = [51, 53, 66, 68];
 const red_step28 = [52, 59, 60, 67];
 
-setTimeout(() => {
-  applyAnimation(blackStitches, black_step1, aniNames[0]);
-}, 1000);
-
-setTimeout(() => {
-  applyAnimation(blackStitches, black_step2, aniNames[0]);
-}, 2500);
-
-setTimeout(() => {
-  applyAnimation(blackStitches, black_step3, aniNames[0]);
-}, 2700);
-
-setTimeout(() => {
-  applyAnimation(blackStitches, black_step4, aniNames[0]);
-}, 2900);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step5, aniNames[1]);
-}, 4800);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step6, aniNames[1]);
-}, 5200);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step7, aniNames[0]);
-}, 5500);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step8, aniNames[0]);
-}, 5600);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step9, aniNames[0]);
-}, 5700);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step10, aniNames[0]);
-}, 5800);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step11, aniNames[0]);
-}, 5900);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step12, aniNames[0]);
-}, 6000);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step13, aniNames[0]);
-  applyAnimation(blackStitches, black_step13, aniNames[1]);
-}, 6100);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step14, aniNames[0]);
-  applyAnimation(blackStitches, black_step14, aniNames[0]);
-}, 6200);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step15, aniNames[0]);
-  applyAnimation(blackStitches, black_step15, aniNames[0]);
-}, 6300);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step16, aniNames[0]);
-  applyAnimation(blackStitches, black_step16, aniNames[0]);
-}, 6400);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step17, aniNames[0]);
-  applyAnimation(blackStitches, black_step17, aniNames[0]);
-}, 6500);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step18, aniNames[0]);
-  applyAnimation(blackStitches, black_step18, aniNames[0]);
-}, 6600);
-
-setTimeout(() => {
-  applyAnimation(blackStitches, black_step19, aniNames[0]);
-}, 6700);
-
-setTimeout(() => {
-  applyAnimation(blackStitches, black_step20, aniNames[1]);
-}, 7100);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step21, aniNames[0]);
-}, 7500);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step22, aniNames[0]);
-}, 7600);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step23, aniNames[0]);
-}, 7700);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step24, aniNames[0]);
-}, 7800);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step25, aniNames[0]);
-}, 7900);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step26, aniNames[1]);
-}, 7400);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step27, aniNames[0]);
-}, 8300);
-
-setTimeout(() => {
-  applyAnimation(redStitches, red_step28, aniNames[0]);
-}, 8400);
-
 // Mmmmmmm, something is missing...
 // Let's give the wrapper a nice rotation animation :)
 
 const wrapper = document.getElementsByTagName("section");
-
-console.log(wrapper);
 
 function rotateWrapper(element) {
   element.style =
     " animation-name: rotateWrapper; animation-duration: 3000ms; animation-iteration-count: 1;animation-fill-mode: forwards;";
 }
 
-setTimeout(() => {
-  rotateWrapper(wrapper[0]);
-}, 2500);
+// Animate:
+
+function animate() {
+  setTimeout(() => {
+    applyAnimation(blackStitches, black_step1, aniNames[0]);
+  }, 1000);
+
+  setTimeout(() => {
+    applyAnimation(blackStitches, black_step2, aniNames[0]);
+  }, 2500);
+
+  setTimeout(() => {
+    applyAnimation(blackStitches, black_step3, aniNames[0]);
+  }, 2700);
+
+  setTimeout(() => {
+    applyAnimation(blackStitches, black_step4, aniNames[0]);
+  }, 2900);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step5, aniNames[1]);
+  }, 4800);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step6, aniNames[1]);
+  }, 5200);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step7, aniNames[0]);
+  }, 5500);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step8, aniNames[0]);
+  }, 5600);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step9, aniNames[0]);
+  }, 5700);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step10, aniNames[0]);
+  }, 5800);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step11, aniNames[0]);
+  }, 5900);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step12, aniNames[0]);
+  }, 6000);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step13, aniNames[0]);
+    applyAnimation(blackStitches, black_step13, aniNames[1]);
+  }, 6100);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step14, aniNames[0]);
+    applyAnimation(blackStitches, black_step14, aniNames[0]);
+  }, 6200);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step15, aniNames[0]);
+    applyAnimation(blackStitches, black_step15, aniNames[0]);
+  }, 6300);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step16, aniNames[0]);
+    applyAnimation(blackStitches, black_step16, aniNames[0]);
+  }, 6400);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step17, aniNames[0]);
+    applyAnimation(blackStitches, black_step17, aniNames[0]);
+  }, 6500);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step18, aniNames[0]);
+    applyAnimation(blackStitches, black_step18, aniNames[0]);
+  }, 6600);
+
+  setTimeout(() => {
+    applyAnimation(blackStitches, black_step19, aniNames[0]);
+  }, 6700);
+
+  setTimeout(() => {
+    applyAnimation(blackStitches, black_step20, aniNames[1]);
+  }, 7100);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step21, aniNames[0]);
+  }, 7500);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step22, aniNames[0]);
+  }, 7600);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step23, aniNames[0]);
+  }, 7700);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step24, aniNames[0]);
+  }, 7800);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step25, aniNames[0]);
+  }, 7900);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step26, aniNames[1]);
+  }, 7400);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step27, aniNames[0]);
+  }, 8300);
+
+  setTimeout(() => {
+    applyAnimation(redStitches, red_step28, aniNames[0]);
+  }, 8400);
+
+  // Rotate animation:
+
+  setTimeout(() => {
+    rotateWrapper(wrapper[0]);
+  }, 2500);
+
+  // Clear stitches:
+
+  setTimeout(() => {
+    clearStitches(stitchBlack);
+    clearStitches(stitchRed);
+    (function () {
+      wrapper[0].attributeStyleMap.delete("animation-name");
+    })();
+  }, 10500);
+}
+
+animate();
+
+// Repeat animation:
+
+setInterval(() => {
+  animate();
+}, 10000);

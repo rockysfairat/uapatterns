@@ -16,6 +16,13 @@ section {
   grid-template-rows: auto;
 }
 
+h3 {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 10;
+}
+
 :root {
   --square-size: 20px;
   --square-size-phone: 10px;
@@ -149,6 +156,7 @@ section {
 /* Global wtrapper is a <body> tag: */
 .darkWrapper {
   background-color: #000;
+  color: #fff;
 }
 
 /* Darkish squares: */
